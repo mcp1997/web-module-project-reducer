@@ -25,8 +25,8 @@ function App() {
     dispatch(changeOperation(operator))
   }
 
-  const handleClear = () => {
-    dispatch(clearDisplay())
+  const handleClear = (display) => {
+    dispatch(clearDisplay(display))
   }
 
   return (
@@ -47,8 +47,8 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleAddToMem} />
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MR"} onClick={() => handleNumber(state.memory)} />
+              <CalcButton value={"MC"} onClick={() => handleClear('memory')} />
             </div>
 
             <div className="row">
@@ -76,7 +76,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"} onClick={handleClear} />
+              <CalcButton value={"CE"} onClick={() => handleClear('total')} />
             </div>
 
           </form>

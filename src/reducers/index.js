@@ -40,7 +40,7 @@ const reducer = (state, action) => {
         case(CLEAR_DISPLAY):
             return ({
                 ...state,
-                total: 0
+                [action.payload]: 0
             })
             
         default:

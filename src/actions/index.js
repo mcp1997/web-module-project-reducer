@@ -15,6 +15,6 @@ export const changeOperation = (operator) => {
   return({ type: CHANGE_OPERATION, payload: operator })
 }
 
-export const clearDisplay = () => {
-  return({ type: CLEAR_DISPLAY })
+export const clearDisplay = (display) => {
+  return({ type: CLEAR_DISPLAY, payload: display })
 }
